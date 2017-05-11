@@ -1,0 +1,10 @@
+<div class="container">
+  <p>Results for "<%= params[:research] %>"</p>
+  <ul>
+    <% @cocktails.each do |cocktail| %>
+      <li>
+        <h2><%= link_to cocktail.name, cocktail_path(cocktail) %></h2>
+      </li>
+    <% end %>
+  </ul>
+</div>
