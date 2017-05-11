@@ -7,4 +7,10 @@
      <li><%= dose.description %> of <%= dose.ingredient.name %> | <%= link_to "Delete", dose_path(dose), method: :delete %></li>
     <% end %>
   </ul>
+
+  <hr>
+
+  <h4>Add a new dose for <%= @cocktail.name %></h4>
+
+  <%= render "doses/form" %>
 </div>
