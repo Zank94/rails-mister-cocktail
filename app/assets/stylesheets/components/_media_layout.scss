@@ -9,7 +9,7 @@
   width: 50%;
 }
 .media-aside {
-  flex: 0 0 400px;
+  flex: 0 0 200px;
   padding: 30px;
   align-self: stretch;
   background: #F8F7F7;
@@ -23,4 +23,7 @@
 }
 .media-section:last-child {
   margin-bottom: 0;
+}
+.small-img {
+  width: 100%;
 }
