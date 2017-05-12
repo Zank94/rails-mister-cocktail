@@ -2,7 +2,14 @@
   <div class="row">
     <div class="col-md-6 col-sm-12">
       <h2>Pictures</h2>
-      <%= image_tag "cocktail.jpeg", class: "small-img" %>
+        <% if @cocktail.photo? %>
+          <%= cl_image_tag @cocktail.photo.path, aspect_ratio: "16:9", crop: :fill, class: "small-img" %>
+        <% else %>
+          <%= simple_form_for @cocktail do |f| %>
+            <%= f.input :photo, as: :attachinary %>
+            <%= f.button :submit, class: "btn btn-primary btn-lg" %>
+          <% end %>
+        <% end %>
       <h2><%= @cocktail.name %></h2>
       <h4>List of doses</h4>
       <ul>

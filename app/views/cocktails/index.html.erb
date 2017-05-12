@@ -5,7 +5,9 @@
         <div class="product-arrow"></div>
         <div class='product-count'><%= rand(0..100) %></div>
       </div>
-      <%= image_tag "cocktail.jpeg", class: "product-image hidden-xs" %>
+      <% if cocktail.photo? %>
+        <%= cl_image_tag cocktail.photo.path, aspect_ratio: "16:9", crop: :fill, class: "product-image hidden-xs" %>
+      <% end %>
       <div class='product-body'>
         <h3><%= link_to cocktail.name, cocktail_path(cocktail) %></h3>
       </div>

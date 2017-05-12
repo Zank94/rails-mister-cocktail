@@ -24,11 +24,17 @@ class CocktailsController < ApplicationController
     end
   end
 
+  def update
+    @cocktail = Cocktail.find(params[:id])
+    @cocktail.update(cocktails_params)
+    redirect_to cocktail_path(@cocktail)
+  end
+
   def research
     @cocktails = Cocktail.where("name LIKE '%#{params[:research]}%'")
   end
 
   def cocktails_params
-    params.require(:cocktail).permit(:name)
+    params.require(:cocktail).permit(:name, :photo)
   end
 end
