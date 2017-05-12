@@ -1,5 +1,5 @@
 <%= simple_form_for @cocktail do |f| %>
   <%= f.input :name %>
-  <%= f.input :photo, as: :attachinary %>
+  <%= f.input :photo, label: "Drag a picture of click to select one", as: :attachinary, input_html: { class: "hidden" }, label_html: { class: "drag" } %>
   <%= f.button :submit, class: "btn btn-primary btn-lg" %>
 <% end %>
