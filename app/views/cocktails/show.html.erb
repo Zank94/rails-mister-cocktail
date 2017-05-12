@@ -6,7 +6,7 @@
           <%= cl_image_tag @cocktail.photo.path, aspect_ratio: "16:9", crop: :fill, class: "small-img" %>
         <% else %>
           <%= simple_form_for @cocktail do |f| %>
-            <%= f.input :photo, as: :attachinary %>
+            <%= f.input :photo, label: "Add a photo", as: :attachinary, input_html: { class: "hidden" }, label_html: { class: "btn btn-primary" } %>
             <%= f.button :submit, class: "btn btn-primary btn-lg" %>
           <% end %>
         <% end %>
