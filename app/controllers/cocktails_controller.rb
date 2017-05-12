@@ -31,7 +31,7 @@ class CocktailsController < ApplicationController
   end
 
   def research
-    @cocktails = Cocktail.where("name LIKE '%#{params[:research]}%'")
+    @cocktails = Cocktail.where("LOWER(name) LIKE '%#{params[:research].downcase}%'")
   end
 
   def cocktails_params
